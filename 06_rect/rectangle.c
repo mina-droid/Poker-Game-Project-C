@@ -16,14 +16,79 @@ int max (int a, int b) {
 }
 
 //Declare your rectangle structure here!
-
+struct rect {
+  int x;
+  int y;
+  int width;
+  int height;
+} typedef  rectangle;
 
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
+  if (r.width < 0)
+    {
+      r.x += r.width;
+      r.width *= -1;
+    }
+  if (r.height < 0)
+    {
+      r.y += r.height;
+      r.height *= -1;
+    }
   return r;
 }
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
+ 
+  if (r1.width < 0)
+    {
+      r1.x += r1.width;
+      r1.width *= -1;
+    }
+  if (r1.height < 0)
+    {
+      r1.y += r1.height;
+      r1.height *= -1;
+    }
+  if (r2.width < 0)
+    {
+      r2.x = r2.x + r2.width;
+      r2.width = r2.width * -1;
+      
+    }
+  if (r2.height < 0)
+    {
+      r2.y += r2.height;
+      r2.height *= -1;
+    }
+  if ((r1.y + r1.height < r2.y || r2.y + r2.height < r1.y)||( r1.x > r2.x + r2.width || r2.x > r1.x + r1.width ))
+    {  
+      r1.height = 0;
+      r1.width = 0;
+      
+    }
+  else
+    {
+       r1.height = min (r1.height + r1.y ,r2.y + r2.height);
+       r1.width = min (r1.width + r1.x ,r2.x +  r2.width);
+      
+   
+    }
+     
+  if (r1.height == 0 && r1.width == 0)
+    {
+      r1.x = max (r1.x, r2.x);
+      r1.y = max (r1.y, r2.y);
+    
+    }
+  else
+    { 
+    
+      r1.x = max (r1.x, r2.x);
+      r1.y = max (r1.y, r2.y);
+      r1.height -= r1.y;
+      r1.width -=  r1.x;
+     }
   return r1;
 }
 
@@ -81,6 +146,7 @@ int main (void) {
   i = intersection(r1,r2);
   printf("intersection(r1,r2): ");
   printRectangle(i);
+
   
   i = intersection(r1,r3);
   printf("intersection(r1,r3): ");
