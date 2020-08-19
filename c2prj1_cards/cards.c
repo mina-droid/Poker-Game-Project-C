@@ -69,9 +69,11 @@ void print_card(card_t c) {
 
 card_t card_from_letters(char value_let, char suit_let){
   card_t c;
-  assert((value_let >= 50 && value_let <= 57) || ( value_let == 65 || value_let == 74 || value_let == 75 || value_let == 81));
-  assert(suit_let == 115 || suit_let == 104 || suit_let == 100 || suit_let == 99 );
-  switch (value_let)
+  assert(value_let == 'A' || value_let == '2' || value_let == '3' || value_let == '4'|| value_let == '5'|| value_let == '6'|| value_let == '7'|| value_let == '8' ||value_let == '9'|| value_let == '0' ||value_let == 'J'|| value_let == 'Q'|| value_let == 'K');
+  assert(suit_let == 's' || suit_let == 'h'|| suit_let == 'd'|| suit_let == 'c');
+    
+
+ switch (value_let)
     {
     case'2': c.value = 2; break;
     case'3': c.value = 3; break;
