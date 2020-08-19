@@ -4,6 +4,7 @@
 #include "cards.h"
 
 
+
 void assert_card_valid(card_t c)
 {
   assert(c.value >= 2 && c.value <= VALUE_ACE && c.suit >= SPADES  && c.suit <= CLUBS); 
@@ -11,18 +12,19 @@ void assert_card_valid(card_t c)
 
 const char * ranking_to_string(hand_ranking_t r)
 {
+   char* s;
   switch (r){
-  case STRAIGHT_FLUSH: printf(" STRAIGHT_FLUSH\n"); break; 
-  case FOUR_OF_A_KIND: printf(" FOUR_OF_A_KIND\n"); break;
-  case FULL_HOUSE: printf("FULL_HOUSE\n"); break;
-  case FLUSH: printf(" FLUSH\n"); break; 
-  case STRAIGHT: printf(" STRAIGHT\n"); break; 
-  case THREE_OF_A_KIND: printf("THREE_OF_A_KIND\n"); break; 
-  case TWO_PAIR: printf(" TWO_PAIR\n");break; 
-  case PAIR: printf(" PAIR\n"); break;   
-  case NOTHING: printf(" NOTHING\n"); break;   
+  case STRAIGHT_FLUSH: s = " STRAIGHT_FLUSH"; break; 
+  case FOUR_OF_A_KIND: s = " FOUR_OF_A_KIND"; break;
+  case FULL_HOUSE: s = "FULL_HOUSE"; break;
+  case FLUSH: s = " FLUSH"; break; 
+  case STRAIGHT: s = " STRAIGHT"; break; 
+  case THREE_OF_A_KIND: s = "THREE_OF_A_KIND"; break; 
+  case TWO_PAIR: s = "TWO_PAIR";break; 
+  case PAIR: s = " PAIR"; break;   
+  case NOTHING: s = "NOTHING"; break;   
   }        
-  return "";
+  return s;
 }
 
 char value_letter(card_t c) {
