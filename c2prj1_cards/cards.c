@@ -14,14 +14,14 @@ const char * ranking_to_string(hand_ranking_t r)
 {
    char* s;
   switch (r){
-  case STRAIGHT_FLUSH: s = " STRAIGHT_FLUSH"; break; 
-  case FOUR_OF_A_KIND: s = " FOUR_OF_A_KIND"; break;
+  case STRAIGHT_FLUSH: s = "STRAIGHT_FLUSH"; break; 
+  case FOUR_OF_A_KIND: s = "FOUR_OF_A_KIND"; break;
   case FULL_HOUSE: s = "FULL_HOUSE"; break;
-  case FLUSH: s = " FLUSH"; break; 
-  case STRAIGHT: s = " STRAIGHT"; break; 
+  case FLUSH: s = "FLUSH"; break; 
+  case STRAIGHT: s = "STRAIGHT"; break; 
   case THREE_OF_A_KIND: s = "THREE_OF_A_KIND"; break; 
   case TWO_PAIR: s = "TWO_PAIR";break; 
-  case PAIR: s = " PAIR"; break;   
+  case PAIR: s = "PAIR"; break;   
   case NOTHING: s = "NOTHING"; break;   
   }        
   return s;
