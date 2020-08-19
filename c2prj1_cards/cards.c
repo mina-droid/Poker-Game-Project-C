@@ -4,35 +4,113 @@
 #include "cards.h"
 
 
-void assert_card_valid(card_t c) {
-
-
+void assert_card_valid(card_t c)
+{
+  assert(c.value >= 2 && c.value <= VALUE_ACE && c.suit >= SPADES  && c.suit <= CLUBS); 
 }
 
-const char * ranking_to_string(hand_ranking_t r) {
+const char * ranking_to_string(hand_ranking_t r)
+{
+  switch (r){
+  case STRAIGHT_FLUSH: printf(" STRAIGHT_FLUSH\n"); break; 
+  case FOUR_OF_A_KIND: printf(" FOUR_OF_A_KIND\n"); break;
+  case FULL_HOUSE: printf("FULL_HOUSE\n"); break;
+  case FLUSH: printf(" FLUSH\n"); break; 
+  case STRAIGHT: printf(" STRAIGHT\n"); break; 
+  case THREE_OF_A_KIND: printf("THREE_OF_A_KIND\n"); break; 
+  case TWO_PAIR: printf(" TWO_PAIR\n");break; 
+  case PAIR: printf(" PAIR\n"); break;   
+  case NOTHING: printf(" NOTHING\n"); break;   
+  }        
   return "";
 }
 
 char value_letter(card_t c) {
-  return 'x';
+  char x;
+  switch (c.value){
+  case 2: x = '2'; break;
+  case 3: x = '3'; break;
+  case 4: x = '4'; break;
+  case 5: x = '5'; break;
+  case 6: x = '6'; break;
+  case 7: x = '7'; break; 
+  case 8: x = '8'; break; 
+  case 9: x = '9'; break;
+  case 10: x = '0'; break;
+  case VALUE_JACK: x = 'J'; break;
+  case VALUE_QUEEN: x = 'Q'; break;
+  case VALUE_KING: x = 'K'; break;
+  case VALUE_ACE: x = 'A'; break;
+  }
+  
+   return x;
 }
 
 
 char suit_letter(card_t c) {
-  return 'x';
+  char y;
+  switch (c.suit){
+  case SPADES: y = 's'; break;
+  case HEARTS: y = 'h'; break;
+  case DIAMONDS: y = 'd'; break;
+  case CLUBS: y = 'c'; break;
+  default: break;
+  }    
+  return y;
   
 }
 
 void print_card(card_t c) {
+  c.value = value_letter(c);
+  c.suit = suit_letter(c);
+  printf("%c%c", c.value, c.suit);
 
 }
 
-card_t card_from_letters(char value_let, char suit_let) {
-  card_t temp;
-  return temp;
+card_t card_from_letters(char value_let, char suit_let){
+  card_t c;
+  assert((value_let >= 50 && value_let <= 57) || ( value_let == 65 || value_let == 74 || value_let == 75 || value_let == 81));
+  assert(suit_let == 115 || suit_let == 104 || suit_let == 100 || suit_let == 99 );
+  switch (value_let)
+    {
+    case'2': c.value = 2; break;
+    case'3': c.value = 3; break;
+    case'4': c.value = 4; break;
+    case'5': c.value = 5; break;
+    case'6': c.value = 6; break;
+    case'7': c.value = 7; break;
+    case'8': c.value = 8; break;
+    case'9': c.value = 9; break;
+    case'0': c.value = 10; break;
+    case'A': c.value = 14; break;
+    case'J': c.value = 11; break;
+    case'Q': c.value = 12; break;
+    case'K': c.value = 13; break;
+ }
+  switch (suit_let)
+   {
+   case 's': c.suit = 0; break;
+   case 'h': c.suit = 1; break;
+   case 'd': c.suit = 2; break;
+   case 'c': c.suit = 3; break;
+   default: break;
+  }
+    
+  return c;
 }
+
 
 card_t card_from_num(unsigned c) {
   card_t temp;
-  return temp;
+  int x = (c % 13) + 1 , y = c / 13;
+  if( x == 1)
+    {
+      temp.value = 14;
+    }
+  else
+    {
+      temp.value = x;
+    }
+  temp.suit = y;
+ return temp;
 }
