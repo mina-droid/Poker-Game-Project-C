@@ -1,4 +1,4 @@
-Grading at Mon Aug 24 02:59:26 UTC 2020
+Grading at Mon Aug 24 14:31:18 UTC 2020
 **Testing broken implementation 10 **
 -------------------------------------
 
@@ -18,35 +18,6 @@ Grading at Mon Aug 24 02:59:26 UTC 2020
 **Testing broken implementation 3 **
 -------------------------------------
 
-
-**Testing broken implementation 4 **
--------------------------------------
-
-
-**Testing broken implementation 5 **
--------------------------------------
-
-
-**Testing broken implementation 6 **
--------------------------------------
-
-ho
-
-**Testing broken implementation 7 **
--------------------------------------
-
-
-**Testing broken implementation 8 **
--------------------------------------
-
-
-**Testing broken implementation 9 **
--------------------------------------
-
-
-**Testing correct implementation **
--------------------------------------
-
-Your test program falsely failed the correct implementation!
+Your test program did not identify /usr/local/l2p/subseq/subseq3.o as broken!
 
 Overall Grade: FAILED
