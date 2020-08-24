@@ -25,7 +25,7 @@ size_t maxSeq(int * array, size_t n)
 	    {
 	      max = maxseq;
 	    }
-	  maxseq = 0;
+	  maxseq = 1;
     }
     }
   return max;
