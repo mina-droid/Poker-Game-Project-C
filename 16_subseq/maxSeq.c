@@ -13,11 +13,12 @@ size_t maxSeq(int * array, size_t n)
     {
       return maxseq;
     }
-  for ( int i = 0, j = i + 1; i < n && j < n; i++)
+  for ( int i = 0, j = 1; i < n && j < n; i++)
     {
       if (array[j] > array[i])
 	{
 	  maxseq++;
+	  j++;
 	}
       else
 	{
@@ -26,6 +27,7 @@ size_t maxSeq(int * array, size_t n)
 	      max = maxseq;
 	    }
 	   maxseq = 1;
+	   j++
         }
     }
   if (maxseq > max)
