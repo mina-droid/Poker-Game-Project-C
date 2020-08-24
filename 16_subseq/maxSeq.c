@@ -25,8 +25,12 @@ size_t maxSeq(int * array, size_t n)
 	    {
 	      max = maxseq;
 	    }
-	  maxseq = 1;
+	   maxseq = 1;
+        }
     }
+  if (maxseq > max)
+    {
+      max = maxseq;
     }
   return max;
  
