@@ -2,8 +2,36 @@
 #include <stdlib.h>
 #include <string.h>
 
-void reverse(char * str) {
-  //WRITE ME!
+void reverse(char * str){
+  int i = 0;
+
+  while (str[i] != '\0'){
+
+    i++;
+  }
+
+  if ( i == 0)
+    {
+      printf(" ");
+    }
+  else
+    {
+      
+     char str4 [i];
+     int k = i - 1;
+     int j = 0;
+     while ( j != i)
+       {
+	 str4[j] = str[k];
+	 j++;
+	 k--;
+       }
+     str4[j] = '\0';
+    
+     printf ("%s\n", str4);
+    }
+
+  
 }
 
 int main(void) {
