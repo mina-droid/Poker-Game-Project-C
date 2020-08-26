@@ -5,32 +5,26 @@
 void reverse(char * str){
   int i = 0;
 
-  while (str[i] != '\0'){
 
+  while (str[i] != '\0'){
     i++;
   }
 
-  if ( i == 0)
-    {
-      printf(" ");
-    }
-  else
-    {
+      int j = 0;
+      char * ptr1 = str;
+      char * ptr2 = str + (i - 1) ;
+      char temp;  
+      while ( j != i/2 )
+	{
+	  temp = *ptr1;
+	  *ptr1 = *ptr2;
+	  *ptr2 = temp;
+	  ptr1++;
+	  ptr2--;
+	  j++;
+	}
       
-     char str4 [i];
-     int k = i - 1;
-     int j = 0;
-     while ( j != i)
-       {
-	 str4[j] = str[k];
-	 j++;
-	 k--;
-       }
-     str4[j] = '\0';
     
-     printf ("%s\n", str4);
-    }
-
   
 }
 
