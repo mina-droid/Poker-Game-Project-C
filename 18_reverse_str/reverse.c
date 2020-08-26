@@ -4,6 +4,10 @@
 
 void reverse(char * str){
   int i = 0;
+  if (str == NULL)
+    {
+      exit(EXIT_FAILURE);
+    }
 
 
   while (str[i] != '\0'){
@@ -23,6 +27,7 @@ void reverse(char * str){
 	  ptr2--;
 	  j++;
 	}
+      str[i] = '\0';
       
     
   
