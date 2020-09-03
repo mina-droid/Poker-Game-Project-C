@@ -169,17 +169,16 @@ hand_eval_t build_hand_from_match(deck_t * hand,unsigned n,hand_ranking_t what,s
   size_t temp = idx;
   for ( int i = 0;i < n;i++)
     {
-      ans.cards[i] -> value = hand -> cards[temp] -> value;
-      ans.cards[i] -> suit = hand -> cards[temp] -> suit;
+      ans.cards[i]= hand -> cards[temp]; 
       temp++;
     }
+  unsigned k = n;
 
-  for ( int h = 0, k = n; h < hand -> n_cards && k < 5 ; h++)
+  for ( int h = 0; h < hand -> n_cards && k < 5 ; h++)
 	{
 	  if ( h < idx || h >= idx + n)
 	    {
-	      ans.cards[k]-> value = hand -> cards[h] ->value;
-	      ans.cards[k] -> suit = hand -> cards[h] -> suit;
+	      ans.cards[k] = hand -> cards[h];
 	      k++;
 	    }
 	}
