@@ -195,11 +195,11 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   hand_eval_t ans2;
   ans1 = evaluate_hand (hand1);
   ans2 = evaluate_hand (hand2);
-  if (ans1.ranking > ans2.ranking)
+  if (ans1.ranking < ans2.ranking)
     {
       return 1;
     }
-  else if (ans1.ranking < ans2.ranking)
+  else if (ans1.ranking > ans2.ranking)
     {
       return -1;
     }
