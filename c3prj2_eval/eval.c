@@ -55,7 +55,7 @@ suit_t flush_suit(deck_t * hand) {
     }
   for ( int i = 0; i < 4; i++)
     {
-      if (cntr[i] == 5)
+      if (cntr[i] >= 5)
 	{
 	  return i;
 	}
