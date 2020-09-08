@@ -1,0 +1,62 @@
+Grading at Tue Sep  8 17:38:04 UTC 2020
+Attempting to compile rotateMatrix.c
+testcase1 passed
+#################################################
+testcase2: NonExistentFile
+ (should indicate an error)
+testcase2 passed
+#################################################
+testcase3: blank.txt
+ (should indicate an error)
+valgrind reported memory errors
+#################################################
+testcase4: short-line.txt
+ (should indicate an error)
+testcase4 passed
+#################################################
+testcase5: short-file.txt
+ (should indicate an error)
+valgrind reported memory errors
+#################################################
+testcase6: long-line.txt
+ (should indicate an error)
+testcase6 passed
+#################################################
+testcase7: long-file.txt
+ (should indicate an error)
+testcase7 failed, your program didn't indicate this is a failure case
+#################################################
+testcase8: long-line-2.txt
+ (should indicate an error)
+testcase8 passed
+#################################################
+testcase9: normal1.txt normal2.txt
+ (should indicate an error)
+testcase9 passed
+#################################################
+testcase10: normal1.txt
+Binary files temp.txt and correct.txt differ
+Could not compare your output to the expected output 
+(explaination should be above)
+testcase10 failed, your output did not match with the answer
+#################################################
+testcase10: normal2.txt
+Binary files temp.txt and correct.txt differ
+Could not compare your output to the expected output 
+(explaination should be above)
+testcase10 failed, your output did not match with the answer
+#################################################
+testcase10: normal3.txt
+Binary files temp.txt and correct.txt differ
+Could not compare your output to the expected output 
+(explaination should be above)
+testcase10 failed, your output did not match with the answer
+#################################################
+testcase10: eof.txt
+Binary files temp.txt and correct.txt differ
+Could not compare your output to the expected output 
+(explaination should be above)
+testcase10 failed, your output did not match with the answer
+ (Maybe you mishandled reading character 0xFF?)
+
+Overall Grade: F
