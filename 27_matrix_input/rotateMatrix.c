@@ -99,6 +99,11 @@ int main(int argc, char ** argv)
 	  printf("%c", arr[i][j]);
 	}
       }
+
+  if (fclose(f) != 0) {
+    fprintf(stderr,"Failed to close the input file!\n");
+    exit(EXIT_FAILURE);
+  }
   
    
 }
