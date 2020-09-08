@@ -1,4 +1,4 @@
-Grading at Tue Sep  8 17:38:04 UTC 2020
+Grading at Tue Sep  8 18:48:48 UTC 2020
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -8,7 +8,7 @@ testcase2 passed
 #################################################
 testcase3: blank.txt
  (should indicate an error)
-valgrind reported memory errors
+testcase3 passed
 #################################################
 testcase4: short-line.txt
  (should indicate an error)
@@ -16,7 +16,7 @@ testcase4 passed
 #################################################
 testcase5: short-file.txt
  (should indicate an error)
-valgrind reported memory errors
+testcase5 passed
 #################################################
 testcase6: long-line.txt
  (should indicate an error)
@@ -35,27 +35,19 @@ testcase9: normal1.txt normal2.txt
 testcase9 passed
 #################################################
 testcase10: normal1.txt
-Binary files temp.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
+Your file did not match the expected ouput
 testcase10 failed, your output did not match with the answer
 #################################################
 testcase10: normal2.txt
-Binary files temp.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
+Your file did not match the expected ouput
 testcase10 failed, your output did not match with the answer
 #################################################
 testcase10: normal3.txt
-Binary files temp.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
+Your file did not match the expected ouput
 testcase10 failed, your output did not match with the answer
 #################################################
 testcase10: eof.txt
-Binary files temp.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
+Your file did not match the expected ouput
 testcase10 failed, your output did not match with the answer
  (Maybe you mishandled reading character 0xFF?)
 
