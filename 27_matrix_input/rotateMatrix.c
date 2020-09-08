@@ -64,12 +64,6 @@ int main(int argc, char ** argv)
 	  }
      
 
-      else if ( s[i] >= 255)
-	{
-	  fprintf(stderr, "incorrect char!");
-	  exit(EXIT_FAILURE);
-	}
-      
       else
 	{
 	  for ( int j = 0; j < 12; j++)
