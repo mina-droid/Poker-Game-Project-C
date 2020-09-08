@@ -3,9 +3,9 @@
 #include<ctype.h>
 #include <string.h>
 
-void rotate(char arr[][12] )
+void rotate(char arr[][10] )
 {
-  char arr2 [10][12];
+  char arr2 [10][10];
   int k;
   for (int i = 0; i < 10; i++)
     {
@@ -43,7 +43,7 @@ int main(int argc, char ** argv)
       fprintf( stderr, "could not open the file!");
       exit(EXIT_FAILURE);
     }
-  char arr [10][12];
+  char arr [10][10];
   int i = 0;
   int ic = 0;
   int c = 0;
@@ -70,7 +70,7 @@ int main(int argc, char ** argv)
 	  }
      else
 	{
-	  for ( int j = 0; j < 12; j++)
+	  for ( int j = 0; j < 10; j++)
 	    {
 	      arr[i][j] = s[j];
 	    }
@@ -88,16 +88,16 @@ int main(int argc, char ** argv)
       fprintf(stderr, "File too short!");
       exit(EXIT_FAILURE);
     }
-  printf("%d", ic);
-
+  
   rotate(arr);
 
   for ( int i = 0; i < 10; i++)
     {
-      for ( int j = 0; j < 12; j++)
+      for ( int j = 0; j < 10; j++)
 	{
 	  printf("%c", arr[i][j]);
 	}
+      printf("\n");
       }
 
   if (fclose(f) != 0) {
