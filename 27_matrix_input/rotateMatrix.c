@@ -45,6 +45,8 @@ int main(int argc, char ** argv)
     }
   char arr [10][12];
   int i = 0;
+  int ic = 0;
+  int c = 0;
   char  s[12];
   while ( fgets(s, 12, f) != NULL)
     {
@@ -53,11 +55,21 @@ int main(int argc, char ** argv)
 	  fprintf(stderr, "Line too long!");
 	  exit(EXIT_FAILURE);
 	}
-      else if ( strchr(s,'\n') != &s[10])
+      for (int  k = 0; s[k] != '\0'; k++){c++; }
+
+	if ( c < 11)
+	  {
+	    fprintf(stderr, "Line too short");
+	    exit (EXIT_FAILURE);
+	  }
+     
+
+      else if ( s[i] >= 255)
 	{
-	  fprintf(stderr, "Line too short");
-	  exit (EXIT_FAILURE);
+	  fprintf(stderr, "incorrect char!");
+	  exit(EXIT_FAILURE);
 	}
+      
       else
 	{
 	  for ( int j = 0; j < 12; j++)
@@ -66,7 +78,17 @@ int main(int argc, char ** argv)
 	    }
 	  i++;
 	}
-      
+	ic++;
+    }
+  if ( ic > 11)
+    {
+      fprintf(stderr,"File too long!");
+      exit(EXIT_FAILURE);
+    }
+  else if ( ic < 11)
+    {
+      fprintf(stderr, "File too short!");
+      exit(EXIT_FAILURE);
     }
 
   rotate(arr);
