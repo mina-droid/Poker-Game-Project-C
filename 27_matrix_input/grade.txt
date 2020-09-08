@@ -1,4 +1,4 @@
-Grading at Tue Sep  8 18:48:48 UTC 2020
+Grading at Tue Sep  8 19:00:56 UTC 2020
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -12,7 +12,7 @@ testcase3 passed
 #################################################
 testcase4: short-line.txt
  (should indicate an error)
-testcase4 passed
+testcase4 failed, your program didn't indicate this is a failure case
 #################################################
 testcase5: short-file.txt
  (should indicate an error)
@@ -24,7 +24,7 @@ testcase6 passed
 #################################################
 testcase7: long-file.txt
  (should indicate an error)
-testcase7 failed, your program didn't indicate this is a failure case
+testcase7 passed
 #################################################
 testcase8: long-line-2.txt
  (should indicate an error)
@@ -35,19 +35,27 @@ testcase9: normal1.txt normal2.txt
 testcase9 passed
 #################################################
 testcase10: normal1.txt
-Your file did not match the expected ouput
+Binary files temp.txt and correct.txt differ
+Could not compare your output to the expected output 
+(explaination should be above)
 testcase10 failed, your output did not match with the answer
 #################################################
 testcase10: normal2.txt
-Your file did not match the expected ouput
+Binary files temp.txt and correct.txt differ
+Could not compare your output to the expected output 
+(explaination should be above)
 testcase10 failed, your output did not match with the answer
 #################################################
 testcase10: normal3.txt
-Your file did not match the expected ouput
+Binary files temp.txt and correct.txt differ
+Could not compare your output to the expected output 
+(explaination should be above)
 testcase10 failed, your output did not match with the answer
 #################################################
 testcase10: eof.txt
-Your file did not match the expected ouput
+Binary files temp.txt and correct.txt differ
+Could not compare your output to the expected output 
+(explaination should be above)
 testcase10 failed, your output did not match with the answer
  (Maybe you mishandled reading character 0xFF?)
 
