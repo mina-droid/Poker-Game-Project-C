@@ -1,4 +1,4 @@
-Grading at Tue Sep  8 19:48:37 UTC 2020
+Grading at Tue Sep  8 19:54:48 UTC 2020
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -35,28 +35,19 @@ testcase9: normal1.txt normal2.txt
 testcase9 passed
 #################################################
 testcase10: normal1.txt
-Binary files temp.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
-testcase10 failed, your output did not match with the answer
+Your file matched the expected output
+testcase10 passed
 #################################################
 testcase10: normal2.txt
-Binary files temp.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
-testcase10 failed, your output did not match with the answer
+Your file matched the expected output
+testcase10 passed
 #################################################
 testcase10: normal3.txt
-Binary files temp.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
-testcase10 failed, your output did not match with the answer
+Your file matched the expected output
+testcase10 passed
 #################################################
 testcase10: eof.txt
-Binary files temp.txt and correct.txt differ
-Could not compare your output to the expected output 
-(explaination should be above)
-testcase10 failed, your output did not match with the answer
- (Maybe you mishandled reading character 0xFF?)
+Your file matched the expected output
+testcase10 passed
 
-Overall Grade: F
+Overall Grade: A
