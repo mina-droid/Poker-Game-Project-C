@@ -80,12 +80,12 @@ int main(int argc, char ** argv)
 	}
 	ic++;
     }
-  if ( ic > 11)
+  if ( ic > 10)
     {
       fprintf(stderr,"File too long!");
       exit(EXIT_FAILURE);
     }
-  else if ( ic < 11)
+  else if ( ic < 10)
     {
       fprintf(stderr, "File too short!");
       exit(EXIT_FAILURE);
