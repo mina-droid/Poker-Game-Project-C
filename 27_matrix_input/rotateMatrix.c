@@ -55,6 +55,12 @@ int main(int argc, char ** argv)
 	  fprintf(stderr, "Line too long!");
 	  exit(EXIT_FAILURE);
 	}
+      if (strchr(s,'\0') != &s[11]){
+
+	fprintf(stderr,"Few arguments\n");
+	exit(EXIT_FAILURE);
+
+      }
       for (int  k = 0; s[k] != '\0'; k++){c++; }
 
 	if ( c < 11)
@@ -62,9 +68,7 @@ int main(int argc, char ** argv)
 	    fprintf(stderr, "Line too short");
 	    exit (EXIT_FAILURE);
 	  }
-     
-
-      else
+     else
 	{
 	  for ( int j = 0; j < 12; j++)
 	    {
@@ -84,6 +88,7 @@ int main(int argc, char ** argv)
       fprintf(stderr, "File too short!");
       exit(EXIT_FAILURE);
     }
+  printf("%d", ic);
 
   rotate(arr);
 
