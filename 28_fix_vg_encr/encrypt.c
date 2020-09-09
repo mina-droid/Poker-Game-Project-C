@@ -41,9 +41,9 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   //outfileNAme is argv[2] + ".txt", so add 4 to its length.
-  char * outFileName = malloc((strlen(argv[2]) + 4 ) * sizeof(*outFileName));
+  char * outFileName = malloc((strlen(argv[2]) + 4 + 1 ) * sizeof(*outFileName));
   strcpy(outFileName, argv[2]);
-  strcat(argv[2], ".enc");
+  strcat(outFileName, ".enc");
   FILE * outFile = fopen(outFileName, "w");
   
   encrypt(f,key, outFile);
