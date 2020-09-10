@@ -16,22 +16,12 @@ void sortData(char ** data, size_t count) {
   qsort(data, count, sizeof(char *), stringOrder);
 }
 
-void freeprint(char * line, char ** data, size_t i)
-{
-   free(line);
-   sortData(data, i);
-   for (int j = 0; j < i; j++)
-    {
-        printf ("%s", data[j]);
-        free(data[j]);
-     }
-  free(data);
-     
-}
 
 
-void getfile( char * line, char ** data, size_t i, int argc, char ** argv)
-{
+int main(int argc, char ** argv) {
+  char ** data = NULL;
+  char * line = NULL;
+  size_t i = 0;
   size_t sz;
    if (argc == 1)
     {
@@ -42,13 +32,23 @@ void getfile( char * line, char ** data, size_t i, int argc, char ** argv)
 	  line = NULL;
           i++;
 	}
-      freeprint(line, data, i);
+      free(line);
+   sortData(data, i);
+   for (int j = 0; j < i; j++)
+    {
+        printf ("%s", data[j]);
+        free(data[j]);
+     }
+  free(data);
+   
        }
 
   if ( argc > 1)
     {
-      for ( int c = 1; c < argc; c++)
+      for ( int c = 1; c < argc; ++c)
 	{
+	  sz = 0;
+	  i = 0;
 	  FILE * f = fopen(argv[c], "r");
 
 	  if ( f == NULL)
@@ -65,27 +65,27 @@ void getfile( char * line, char ** data, size_t i, int argc, char ** argv)
              i++;
 	    
 	    }
-	   freeprint(line, data, i);
+	   free(line);
+   sortData(data, i);
+   for (int j = 0; j < i; j++)
+    {
+        printf ("%s", data[j]);
+        free(data[j]);
+     }
+  free(data);
+  data = NULL;
+   
 	   if (fclose(f) != 0)
 	     {
 	       fprintf(stderr, "could not close file!");
 	       exit (EXIT_FAILURE);
 	     }
+	   f = NULL;
+	   
 	}
 
       
     }
- 
-  
-}
-
-int main(int argc, char ** argv) {
-  char ** data = NULL;
-  char * line = NULL;
-  size_t i = 0;
-  
-  getfile(line, data,i, argc, argv);    
-  //WRITE YOUR CODE HERE!
-  
+   
   return EXIT_SUCCESS;
 }
