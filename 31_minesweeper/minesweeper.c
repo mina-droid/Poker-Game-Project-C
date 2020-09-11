@@ -182,7 +182,7 @@ int checkWin(board_t * b) {
 }
 
 void freeBoard(board_t * b) {
-  for ( int i = 0; i < b -> width; i++)
+  for ( int i = 0; i < b -> height; i++)
     {
       free(b -> board[i]);
     }
