@@ -186,6 +186,10 @@ void freeBoard(board_t * b) {
     {
       free(b -> board[i]);
     }
+  if ( b -> width == 1)
+    {
+      free(b -> board + 2);
+    }
   free(b -> board);
   free(b);
   }
