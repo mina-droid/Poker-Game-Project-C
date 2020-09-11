@@ -44,18 +44,20 @@ board_t * makeBoard(int w, int h, int numMines) {
   board_t * b = malloc(sizeof(board_t));
   b -> height = h;
   b -> width = w;
+  b -> totalMines = numMines;
   b ->  board = malloc (b -> width  * b -> height * sizeof(int));
-  for ( int i = 0; i < w ; i++)
+  for ( int i = 0; i < b-> height  ; i++)
     {
-      b-> board[i] = malloc( h * sizeof(int));
+      b-> board[i] = malloc( b-> width * sizeof(int));
     }
   
-  for ( int i = 0; i < w; i++)
+  for ( int i = 0; i < b->height; i++)
     {
-      for( int j = 0; j < h; j++)
+      for( int j = 0; j < b-> width; j++)
 	{
 	  b -> board[i][j] = UNKNOWN;
 	}
+      
     }
 
   for ( int i = 0; i < numMines; i++)
@@ -126,16 +128,20 @@ int countMines(board_t * b, int x, int y) {
 	  int curry = y + j;
 	  if (!(currx == x && curry == y))
 	    {
-	      if(currx >= 0 && curry >= 0 && currx < b->width && curry < b->height){
-		if(IS_MINE(b->board[curry][currx])){
-		  ++count;
-		}
+	      if(currx >= 0 && curry >= 0 && currx < b->width && curry < b->height)
+		{
+		if(IS_MINE(b->board[curry][currx]))
+		  {
+		  count++;
+		 }
 	      }
 	    }
 
 	      
 	}
     }
+  
+  
   return count;
 }
 int click (board_t * b, int x, int y) {
@@ -158,9 +164,9 @@ int click (board_t * b, int x, int y) {
 }
 
 int checkWin(board_t * b) {
-  for ( int i = 0; i < b -> width; i++)
+  for ( int i = 0; i < b -> height; i++)
     {
-      for ( int j = 0; j < b -> height; j++)
+      for ( int j = 0; j < b -> width; j++)
 	{
 	  if ( b -> board[i][j] == UNKNOWN)
 	    {
