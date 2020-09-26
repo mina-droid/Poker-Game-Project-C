@@ -5,10 +5,15 @@
 
 char *  stripNewline(char * str)  {
   char * p = strchr(str, '=');
+  char * s = strchr(str, '\n');
+  if ( s != NULL)
+    {
+      *s = '\0';
+    }
   size_t len = strlen(str);
   *p = '\0';
   p++;
-  p[len - 1 ]='\0';
+  p[len ] = '\0';
   return p;
   
 }
