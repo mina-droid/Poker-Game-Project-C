@@ -11,6 +11,7 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   if ( f == NULL)
     {
       fprintf(stderr,"could not open file");
+      return NULL;
       exit(EXIT_FAILURE);
     }
   char* line= NULL;
@@ -26,8 +27,7 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   if (fclose(f) != 0 ) return NULL;
   return ans;
   //WRITE ME
-  return NULL;
-}
+  }
 
 int main(int argc, char ** argv) {
   //WRITE ME (plus add appropriate error checking!)
