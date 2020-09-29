@@ -17,8 +17,8 @@ card_t * add_empty_card(deck_t * deck)
   card_t * ans;
   ans -> value = 0;
   ans -> suit = 0;
-  deck -> cards[n_cards] -> value = ans -> value;
-  deck ->cards[n_cards]-> suit = ans -> suit;
+  deck -> cards[deck -> n_cards] -> value = ans -> value;
+  deck ->cards[deck -> n_cards]-> suit = ans -> suit;
   return ans;
   
 }
