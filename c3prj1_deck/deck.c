@@ -5,9 +5,10 @@
 
 void add_card_to(deck_t * deck, card_t c)
 {
-  deck -> cards = realloc ( deck -> cards, (deck -> n_cards) *( sizeof(*deck -> cards)));
+  deck -> cards = realloc ( deck -> cards, (deck -> n_cards + 1 ) *( sizeof(*deck -> cards)));
   deck -> cards[deck -> n_cards] -> value = c.value;
   deck -> cards[deck -> n_cards] -> suit = c.suit;
+  deck -> n_cards++;
     
 }
 
@@ -64,7 +65,6 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands)
     {
       for ( int j = 0; j < hands[i] -> n_cards; j++)
 	{
-	  temp -> n_cards++;
 	  add_card_to(temp, *hands[i]-> cards[j]);
 	}
     }
