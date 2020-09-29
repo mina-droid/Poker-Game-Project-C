@@ -1,28 +1,5 @@
-Grading at Tue Sep 29 21:45:50 UTC 2020
+Grading at Tue Sep 29 21:48:33 UTC 2020
 Compiling deck.c -> deck.o
-In file included from deck.c:4:0:
-deck.h:1:3: error: stray ‘#’ in program
- xo#ifndef DECK_H
-   ^
-deck.h:1:1: error: unknown type name ‘xo’
- xo#ifndef DECK_H
- ^
-deck.h:1:11: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘DECK_H’
- xo#ifndef DECK_H
-           ^
-In file included from deck.h:4:0,
-                 from deck.c:4:
-cards.h:13:3: error: data definition has no type or storage class [-Werror]
- } suit_t;
-   ^
-cards.h:13:3: error: type defaults to ‘int’ in declaration of ‘suit_t’ [-Werror=implicit-int]
-cards.h:17:3: error: expected specifier-qualifier-list before ‘suit_t’
-   suit_t suit;
-   ^
-In file included from deck.c:4:0:
-deck.h:21:2: error: #endif without #if
- #endif
-  ^
 deck.c: In function ‘add_card_to’:
 deck.c:9:17: error: ‘n_cards’ undeclared (first use in this function)
    deck -> cards[n_cards] -> value = c -> value;
@@ -35,15 +12,9 @@ deck.c:10:38: error: invalid type argument of ‘->’ (have ‘card_t {aka stru
    deck -> cards[n_cards] -> suit = c -> suit;
                                       ^
 deck.c: In function ‘add_empty_card’:
-deck.c:19:7: error: ‘card_t {aka struct card_tag}’ has no member named ‘suit’
-   ans -> suit = 0;
-       ^
 deck.c:20:17: error: ‘n_cards’ undeclared (first use in this function)
    deck -> cards[n_cards] -> value = ans -> value;
                  ^
-deck.c:21:38: error: ‘card_t {aka struct card_tag}’ has no member named ‘suit’
-   deck ->cards[n_cards]-> suit = ans -> suit;
-                                      ^
 deck.c: In function ‘make_deck_exclude’:
 deck.c:34:23: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
        ans -> cards[i] = card_from_num(i);
@@ -55,12 +26,6 @@ In file included from deck.c:4:0:
 deck.h:12:5: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
  int deck_contains(deck_t * d, card_t c) ;
      ^
-deck.c:45:26: error: ‘card_t {aka struct card_tag}’ has no member named ‘suit’
-     if ( ans -> cards[j] -> suit == excluded_cards -> cards[i] -> suit)
-                          ^
-deck.c:45:64: error: ‘card_t {aka struct card_tag}’ has no member named ‘suit’
-     if ( ans -> cards[j] -> suit == excluded_cards -> cards[i] -> suit)
-                                                                ^
 deck.c: In function ‘build_remaining_deck’:
 deck.c:67:22: error: incompatible type for argument 2 of ‘add_card_to’
     add_card_to(temp, hands[i]->cards[j]);
@@ -68,22 +33,6 @@ deck.c:67:22: error: incompatible type for argument 2 of ‘add_card_to’
 deck.c:6:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
  void add_card_to(deck_t * deck, card_t c)
       ^
-deck.c: In function ‘deck_contains’:
-deck.c:104:26: error: ‘card_t {aka struct card_tag}’ has no member named ‘suit’
-        if( d -> cards[i] -> suit == c.suit){
-                          ^
-deck.c:104:38: error: ‘card_t {aka struct card_tag}’ has no member named ‘suit’
-        if( d -> cards[i] -> suit == c.suit){
-                                      ^
-In file included from deck.c:3:0:
-deck.c: In function ‘assert_full_deck’:
-deck.c:134:28: error: ‘card_t {aka struct card_tag}’ has no member named ‘suit’
-     assert ( d -> cards[i] -> suit >= 0 && d -> cards[i] -> suit <= 3);
-                            ^
-deck.c:134:58: error: ‘card_t {aka struct card_tag}’ has no member named ‘suit’
-     assert ( d -> cards[i] -> suit >= 0 && d -> cards[i] -> suit <= 3);
-                                                          ^
-cc1: all warnings being treated as errors
 Compilation of deck.c failed
 
 Overall Grade: F
