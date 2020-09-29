@@ -1,16 +1,12 @@
-Grading at Tue Sep 29 21:59:55 UTC 2020
+Grading at Tue Sep 29 22:03:25 UTC 2020
 Compiling deck.c -> deck.o
 deck.c: In function ‘make_deck_exclude’:
-deck.c:34:23: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
-       ans -> cards[i] = card_from_num(i);
-                       ^
-deck.c:38:35: error: incompatible type for argument 2 of ‘deck_contains’
-       int n =  deck_contains(ans, excluded_cards -> cards[i]);
-                                   ^
-In file included from deck.c:4:0:
-deck.h:12:5: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
- int deck_contains(deck_t * d, card_t c) ;
-     ^
+deck.c:34:14: error: expected identifier before ‘*’ token
+       ans -> *cards[i] = card_from_num(i);
+              ^
+deck.c:38:53: error: expected identifier before ‘*’ token
+       int n =  deck_contains(ans, excluded_cards -> *cards[i]);
+                                                     ^
 deck.c: In function ‘build_remaining_deck’:
 deck.c:67:22: error: incompatible type for argument 2 of ‘add_card_to’
     add_card_to(temp, hands[i]->cards[j]);
