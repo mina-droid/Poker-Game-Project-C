@@ -245,7 +245,7 @@ unsigned * get_match_counts(deck_t * hand)
 	  card_t y = *(hand->cards[j]);
 	  if(y.value ==x.value)
 	    {
-	      count ++;
+	      count++;
 	    }
 	}
       ans[i] = count;
