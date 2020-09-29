@@ -1,4 +1,4 @@
-Grading at Tue Sep 29 21:48:33 UTC 2020
+Grading at Tue Sep 29 21:53:22 UTC 2020
 Compiling deck.c -> deck.o
 deck.c: In function ‘add_card_to’:
 deck.c:9:17: error: ‘n_cards’ undeclared (first use in this function)
