@@ -55,11 +55,14 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands)
     {
       for ( int j = 0; j < hands[i] -> n_cards; j++)
 	{
-	  add_card_to(temp, *hands[i]-> cards[j]);
+	  temp -> cards = realloc (temp -> cards, (temp -> n_cards + 1) * (sizeof(*temp -> cards)));
+	  temp -> cards[temp -> n_cards] = hands[i] -> cards[j];
+	  temp -> n_cards ++;
+	   
 	}
     }
   deck_t * ans = make_deck_exclude(temp);
-  free_deck(ans);
+  free_deck(temp -> cards);
   free_deck(temp);
   return ans;
   
