@@ -1,14 +1,17 @@
-Grading at Tue Sep 29 22:38:56 UTC 2020
+Grading at Tue Sep 29 22:40:31 UTC 2020
 Compiling deck.c -> deck.o
-deck.c: In function ‘add_empty_card’:
-deck.c:18:3: error: ‘ans’ undeclared (first use in this function)
-   ans.value = 0;
-   ^
-deck.c:18:3: note: each undeclared identifier is reported only once for each function it appears in
-deck.c:17:10: error: unused variable ‘temp’ [-Werror=unused-variable]
-   card_t temp;
-          ^
+Compiling eval.c -> eval.o
+eval.c: In function ‘get_match_counts’:
+eval.c:256:12: error: passing argument 1 of ‘free’ makes pointer from integer without a cast [-Werror=int-conversion]
+       free(ans[i]);
+            ^
+In file included from deck.h:3:0,
+                 from eval.h:3,
+                 from eval.c:1:
+/usr/include/stdlib.h:483:13: note: expected ‘void *’ but argument is of type ‘unsigned int’
+ extern void free (void *__ptr) __THROW;
+             ^
 cc1: all warnings being treated as errors
-Compilation of deck.c failed
+Compilation of eval.c failed
 
 Overall Grade: F
