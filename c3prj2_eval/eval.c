@@ -251,10 +251,7 @@ unsigned * get_match_counts(deck_t * hand)
 	}
     }
   unsigned * match = ans;
-  for (int i = 0; i< hand -> n_cards;i++)
-    {
-      free(ans[i]);
-    }
+  ans = NULL;
   free(ans);
   return match;
 
