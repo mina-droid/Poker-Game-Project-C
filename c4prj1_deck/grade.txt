@@ -1,10 +1,5 @@
-Grading at Tue Sep 29 21:57:57 UTC 2020
+Grading at Tue Sep 29 21:59:55 UTC 2020
 Compiling deck.c -> deck.o
-deck.c: In function ‘add_empty_card’:
-deck.c:20:17: error: ‘n_cards’ undeclared (first use in this function)
-   deck -> cards[n_cards] -> value = ans -> value;
-                 ^
-deck.c:20:17: note: each undeclared identifier is reported only once for each function it appears in
 deck.c: In function ‘make_deck_exclude’:
 deck.c:34:23: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
        ans -> cards[i] = card_from_num(i);
