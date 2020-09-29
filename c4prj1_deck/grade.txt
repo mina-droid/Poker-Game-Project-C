@@ -1,9 +1,13 @@
-Grading at Tue Sep 29 22:33:07 UTC 2020
+Grading at Tue Sep 29 22:38:56 UTC 2020
 Compiling deck.c -> deck.o
 deck.c: In function ‘add_empty_card’:
-deck.c:18:16: error: ‘ans’ is used uninitialized in this function [-Werror=uninitialized]
-   ans -> value = 0;
-                ^
+deck.c:18:3: error: ‘ans’ undeclared (first use in this function)
+   ans.value = 0;
+   ^
+deck.c:18:3: note: each undeclared identifier is reported only once for each function it appears in
+deck.c:17:10: error: unused variable ‘temp’ [-Werror=unused-variable]
+   card_t temp;
+          ^
 cc1: all warnings being treated as errors
 Compilation of deck.c failed
 
