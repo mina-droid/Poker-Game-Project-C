@@ -62,8 +62,8 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands)
 	}
     }
   deck_t * ans = make_deck_exclude(temp);
-  free_deck(temp -> cards);
-  free_deck(temp);
+  free(temp->cards);
+  free(temp);
   return ans;
   
 }
