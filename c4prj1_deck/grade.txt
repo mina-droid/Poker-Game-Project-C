@@ -1,16 +1,10 @@
-Grading at Tue Sep 29 22:08:14 UTC 2020
+Grading at Tue Sep 29 22:33:07 UTC 2020
 Compiling deck.c -> deck.o
-deck.c: In function ‘make_deck_exclude’:
-deck.c:34:14: error: expected identifier before ‘*’ token
-       ans -> *(*cards[i]) = card_from_num(i);
-              ^
-deck.c:38:53: error: expected identifier before ‘*’ token
-       int n =  deck_contains(ans, excluded_cards -> *(*cards[i]));
-                                                     ^
-deck.c: In function ‘build_remaining_deck’:
-deck.c:67:33: error: expected identifier before ‘*’ token
-    add_card_to(temp, hands[i]-> *(*cards[j]));
-                                 ^
+deck.c: In function ‘add_empty_card’:
+deck.c:18:16: error: ‘ans’ is used uninitialized in this function [-Werror=uninitialized]
+   ans -> value = 0;
+                ^
+cc1: all warnings being treated as errors
 Compilation of deck.c failed
 
 Overall Grade: F
