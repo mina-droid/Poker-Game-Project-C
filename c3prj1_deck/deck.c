@@ -19,13 +19,12 @@ void add_card_to(deck_t * deck, card_t c)
 
 card_t * add_empty_card(deck_t * deck)
 {
-  card_t temp;
-  temp.value = 0;
-  temp.suit = 0;
-  deck -> cards[deck -> n_cards] -> value = temp.value;
-  deck ->cards[deck -> n_cards]-> suit = temp.suit;
-  card_t * ans = deck -> cards[ deck -> n_cards];
-  return ans;
+  card_t * temp;
+  temp -> value = 0;
+  temp -> suit = 0;
+  deck -> cards[deck -> n_cards] =  temp;
+  deck -> n_cards++;
+  return temp;
   
 }
 
