@@ -19,10 +19,11 @@ void add_card_to(deck_t * deck, card_t c)
 
 card_t * add_empty_card(deck_t * deck)
 {
-  card_t * temp =malloc (sizeof(*temp)) ;
+  card_t * temp =malloc(sizeof(*temp)) ;
   temp -> value = 0;
-  temp -> suit = 0;
-  deck -> cards[deck -> n_cards] =  temp;
+  temp -> suit = 0; 
+  deck -> cards = realloc ( deck -> cards, (deck -> n_cards + 1)*(sizeof(*deck -> cards)));
+  deck -> cards[deck -> n_cards  ] =  temp;
   deck -> n_cards++;
   return temp;
   
