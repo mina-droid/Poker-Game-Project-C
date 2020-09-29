@@ -1,20 +1,17 @@
-Grading at Tue Sep 29 21:53:22 UTC 2020
+Grading at Tue Sep 29 21:55:23 UTC 2020
 Compiling deck.c -> deck.o
 deck.c: In function ‘add_card_to’:
-deck.c:9:17: error: ‘n_cards’ undeclared (first use in this function)
-   deck -> cards[n_cards] -> value = c -> value;
-                 ^
-deck.c:9:17: note: each undeclared identifier is reported only once for each function it appears in
-deck.c:9:39: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
-   deck -> cards[n_cards] -> value = c -> value;
-                                       ^
-deck.c:10:38: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
-   deck -> cards[n_cards] -> suit = c -> suit;
-                                      ^
+deck.c:9:47: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
+   deck -> cards[deck -> n_cards] -> value = c -> value;
+                                               ^
+deck.c:10:46: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
+   deck -> cards[deck -> n_cards] -> suit = c -> suit;
+                                              ^
 deck.c: In function ‘add_empty_card’:
 deck.c:20:17: error: ‘n_cards’ undeclared (first use in this function)
    deck -> cards[n_cards] -> value = ans -> value;
                  ^
+deck.c:20:17: note: each undeclared identifier is reported only once for each function it appears in
 deck.c: In function ‘make_deck_exclude’:
 deck.c:34:23: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
        ans -> cards[i] = card_from_num(i);
