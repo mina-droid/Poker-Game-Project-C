@@ -38,7 +38,7 @@ deck_t * make_deck_exclude(deck_t * excluded_cards)
   for ( unsigned  i = 0; i < 52; i++)
     {
       card_t c  = card_from_num(i);
-      if (! deck_contins(excluded_cards, c))
+      if (! deck_contains(excluded_cards, c))
 	{
 	  add_card_to(ans,c);
 	}
