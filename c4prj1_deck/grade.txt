@@ -1,15 +1,15 @@
-Grading at Tue Sep 29 22:06:34 UTC 2020
+Grading at Tue Sep 29 22:08:14 UTC 2020
 Compiling deck.c -> deck.o
 deck.c: In function ‘make_deck_exclude’:
 deck.c:34:14: error: expected identifier before ‘*’ token
-       ans -> **cards[i] = card_from_num(i);
+       ans -> *(*cards[i]) = card_from_num(i);
               ^
 deck.c:38:53: error: expected identifier before ‘*’ token
-       int n =  deck_contains(ans, excluded_cards -> **cards[i]);
+       int n =  deck_contains(ans, excluded_cards -> *(*cards[i]));
                                                      ^
 deck.c: In function ‘build_remaining_deck’:
 deck.c:67:33: error: expected identifier before ‘*’ token
-    add_card_to(temp, hands[i]-> **cards[j]);
+    add_card_to(temp, hands[i]-> *(*cards[j]));
                                  ^
 Compilation of deck.c failed
 
