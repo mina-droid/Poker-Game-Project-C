@@ -242,9 +242,11 @@ unsigned * get_match_counts(deck_t * hand)
     }
   for ( int i = 0; i < hand -> n_cards; i++)
     {
+      card_t x = *(hand->cards[i]);
       for ( int j = 0; hand -> n_cards; j++)
 	{
-	  if(hand -> cards[j] -> value == hand -> cards[i] -> value)
+	  card_t y = *(hand->cards[j]);
+	  if(y.value ==x.value)
 	    {
 	      ans[i]++;
 	    }
