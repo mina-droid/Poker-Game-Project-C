@@ -252,10 +252,7 @@ unsigned * get_match_counts(deck_t * hand)
 	    }
 	}
     }
-  unsigned * match = ans;
-  ans = NULL;
-  free(ans);
-  return match;
+  return ans;
 
 
    
