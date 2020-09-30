@@ -8,34 +8,6 @@
 #include "future.h"
 #include "input.h"
 
-int win_hand(deck_t ** deck_array,int n_hands){
-  int w[n_hands+1];
-  for(int u=0;u<n_hands+1;u++) w[u]=0;
-  int v=0;
-  for(int i =0;i<n_hands-1;i++){
-    for (int j=i+1;j<n_hands;j++){
-      // print_hand(deck_array[i]);
-      //            print_hand(deck_array[j]);
-      // printf("\n");
-      v=compare_hands(deck_array[i],deck_array[j]);
-      if(v>0) w[i]++;
-      else if (v<0) w[j]++;
-      else w[n_hands]++;
-    }
-  }
-  unsigned largest= 0;
-  for(int x=0;x<n_hands+1;x++){
-    if(w[x] > w[largest])largest=x;
-  }
-  int count=0;
-  if(w[n_hands]>0){
-    for(int x=0;x<n_hands+1;x++){
-      if(w[x] == w[largest]) count++;
-    }
-  }
-  if(count>1) return n_hands;
-  return  largest;
-}
 
 int main(int argc, char ** argv) {
   //check arguments
@@ -68,7 +40,23 @@ int main(int argc, char ** argv) {
     //Assign unknown cards from the shuffled deck
     future_cards_from_deck(sh,fc);
     //Use compare_hands (from Course 3)
-    int c =win_hand(deck_array,n_hands);
+    int index=0;
+    int decide;
+    deck_t *highest=deck_array[index];
+    for(int j=1;j<n_hands;j++)
+      {
+	decide=compare_hands(highest,input[j]);
+	if(decide<0)
+	  {
+	    index=j;
+	    highest=input[index];
+	  }
+	else if(decide==0)
+	  {
+	    index=n_hands;
+	  }
+      }
+    
     win_array[c]++;
   }
   //you just need to print your results
