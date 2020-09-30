@@ -45,11 +45,11 @@ int main(int argc, char ** argv) {
     deck_t *highest=deck_array[index];
     for(int j=1;j<n_hands;j++)
       {
-	decide=compare_hands(highest,input[j]);
+	decide=compare_hands(highest,deck_array[j]);
 	if(decide<0)
 	  {
 	    index=j;
-	    highest=input[index];
+	    highest=deck_array[index];
 	  }
 	else if(decide==0)
 	  {
@@ -57,7 +57,7 @@ int main(int argc, char ** argv) {
 	  }
       }
     
-    win_array[c]++;
+    win_array[index]++;
   }
   //you just need to print your results
   for(size_t j=0;j<n_hands;j++){
